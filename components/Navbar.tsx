@@ -18,17 +18,20 @@ const categories = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-white w-full text-sm border-b">
-      <div className="flex gap-6 px-4 py-2 overflow-x-auto whitespace-nowrap">
+    <nav className="bg-white w-full border-b border-gray-200">
+      <div className="flex gap-8 px-6 overflow-x-auto whitespace-nowrap">
         {categories.map((c) => (
           <Link
             key={c.slug}
             href={`/${c.slug}`}
-            className="hover:text-red-600 transition"
+            className="py-4 text-base font-medium text-gray-700 hover:text-red-600 transition"
           >
             {c.name}
           </Link>
         ))}
+        <button className="py-4 text-base font-medium text-gray-700 hover:text-red-600">
+          •••
+        </button>
       </div>
     </nav>
   );
